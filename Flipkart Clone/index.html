@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipkart Clone - Designed by Hirangka</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+        .hero-banner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .hero-banner img {
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -39,8 +58,12 @@
 
     <!-- Hero Section -->
     <div class="hero-section">
-        <div class="hero-banner">
-            <img src="hero_image.jpg" alt="Hero Banner">
+        <div class="hero-banner" id="hero-banner">
+            <img src="hero_image1.png" alt="Hero Banner 1">
+            <img src="hero_image2.png" alt="Hero Banner 2">
+            <img src="hero_image3.png" alt="Hero Banner 3">
+            <img src="hero_image4.png" alt="Hero Banner 4">
+            <img src="hero_image5.png" alt="Hero Banner 5">
         </div>
     </div>
 
@@ -97,5 +120,18 @@
             © 2024 Flipkart Clone - Designed by Hirangka
         </div>
     </footer>
+
+    <script>
+        // JavaScript for hero image carousel
+        const heroBanner = document.getElementById('hero-banner');
+        let index = 0; // Current image index
+        const totalImages = 5; // Total number of images
+    
+        setInterval(() => {
+            index = (index + 1) % totalImages; // Update index to cycle through all images
+            heroBanner.style.transform = `translateX(-${index * 100}%)`; // Slide to the next image
+        }, 3000); // Change image every 3 seconds
+    </script>
+    
 </body>
 </html>
